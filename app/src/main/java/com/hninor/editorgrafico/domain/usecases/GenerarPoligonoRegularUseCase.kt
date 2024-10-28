@@ -24,8 +24,8 @@ class GenerarPoligonoRegularUseCase {
 
         val angle = 2 * Math.PI / numeroLados
         for (i in 0 until numeroLados) {
-            val x = 0.5 + 0.25 * cos(i * angle)
-            val y = 0.5 + 0.25 * sin(i * angle)
+            val x = 0.5  + 0.25 * cos(i * angle)
+            val y = 0.764 + 0.25 * sin(i * angle)
 
             response.add(Point(x.toFloat(), y.toFloat()))
         }

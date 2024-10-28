@@ -53,7 +53,6 @@ fun DesignScreen(figures: List<Figure>) {
     var indexPointSelected = 0
 
     var width = 1f
-    var height = 1f
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
 
         Canvas(
@@ -84,7 +83,7 @@ fun DesignScreen(figures: List<Figure>) {
                             )
 
                             val newPoints = offsetList.map {
-                                Point(it.x / width, it.y / height)
+                                Point(it.x / width, it.y / width)
                             }
 
                             figureSelected = figureSelected.copy(points = newPoints)
@@ -97,7 +96,6 @@ fun DesignScreen(figures: List<Figure>) {
 
 
             width = size.width
-            height = size.width
 
             if (figureSelected.points.isNotEmpty()) {
 
@@ -107,7 +105,7 @@ fun DesignScreen(figures: List<Figure>) {
                 offsetList.clear()
 
                 orderedPoints.forEach { point ->
-                    offsetList.add(Offset(point.x * width, point.y * height))
+                    offsetList.add(Offset(point.x * width , point.y  * width))
                 }
 
 
@@ -139,14 +137,14 @@ fun DesignScreen(figures: List<Figure>) {
                 )
 
 
-/*
+
                 drawCircle(
                     color = Color.Magenta,
                     radius = size.minDimension / 4,
                     style = Stroke(
                         width = 4f
                     )
-                )*/
+                )
 
             }
 
