@@ -2,10 +2,9 @@ package com.hninor.editorgrafico.domain.usecases
 
 import com.hninor.editorgrafico.domain.entities.Figure
 import com.hninor.editorgrafico.domain.entities.Point
-import java.lang.Math.cos
-import java.lang.Math.sin
 
 
+import kotlin.math.*
 class GenerarPoligonoRegularUseCase {
 
     fun generarDummy(): Figure {
