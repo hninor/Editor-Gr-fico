@@ -1,10 +1,12 @@
 package com.hninor.editorgrafico.domain.usecases
 
+
+import android.util.Log
 import com.hninor.editorgrafico.domain.entities.Figure
 import com.hninor.editorgrafico.domain.entities.Point
+import kotlin.math.cos
+import kotlin.math.sin
 
-
-import kotlin.math.*
 class GenerarPoligonoRegularUseCase {
 
     fun generarDummy(): Figure {
@@ -13,6 +15,7 @@ class GenerarPoligonoRegularUseCase {
 
     fun generarPoligono(numeroLados: Int): Figure {
         val response = Figure("Poligono regular $numeroLados", generarPuntos(numeroLados))
+        Log.d("Poligono Regular", "${response.points}")
         return response
     }
 

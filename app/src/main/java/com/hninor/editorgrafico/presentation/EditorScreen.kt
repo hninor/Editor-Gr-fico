@@ -27,6 +27,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PointMode
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -96,7 +97,7 @@ fun DesignScreen(figures: List<Figure>) {
 
 
             width = size.width
-            height = size.height
+            height = size.width
 
             if (figureSelected.points.isNotEmpty()) {
 
@@ -124,7 +125,7 @@ fun DesignScreen(figures: List<Figure>) {
                     drawLine(
                         start = offsetList[i],
                         end = offsetList[i + 1],
-                        strokeWidth = 10f,
+                        strokeWidth = 4f,
                         color = Color.Red
                     )
                 }
@@ -133,9 +134,19 @@ fun DesignScreen(figures: List<Figure>) {
                 drawLine(
                     start = offsetList[offsetList.size - 1],
                     end = offsetList[0],
-                    strokeWidth = 10f,
+                    strokeWidth = 4f,
                     color = Color.Red
                 )
+
+
+/*
+                drawCircle(
+                    color = Color.Magenta,
+                    radius = size.minDimension / 4,
+                    style = Stroke(
+                        width = 4f
+                    )
+                )*/
 
             }
 
@@ -149,11 +160,6 @@ fun DesignScreen(figures: List<Figure>) {
                 .weight(1f),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(figures) { figure ->
-                FigureItem(figure) {
-                    figureSelected = it
-                }
-            }
 
             item {
                 FigureItem(figure = usecase.generarDummy()) {
@@ -162,6 +168,14 @@ fun DesignScreen(figures: List<Figure>) {
 
 
             }
+
+            items(figures) { figure ->
+                FigureItem(figure) {
+                    figureSelected = it
+                }
+            }
+
+
         }
 
     }
