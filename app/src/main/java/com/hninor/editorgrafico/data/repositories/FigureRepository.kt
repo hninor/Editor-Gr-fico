@@ -11,7 +11,20 @@ class FigureRepository(
 ) {
 
     suspend fun getFigures(): Result<List<Figure>> {
+        if (localDataSource.hayDatosLocales()) {
+            return getFiguresLocal()
+        } else {
+            return getFiguresRemote()
+        }
+
+    }
+
+    suspend fun getFiguresRemote(): Result<List<Figure>> {
         return remoteDataSource.getFigures()
+    }
+
+    suspend fun getFiguresLocal(): Result<List<Figure>> {
+        return localDataSource.getFigures()
     }
 
     suspend fun saveFiguresLocally(figures: List<Figure>) {

@@ -13,5 +13,8 @@ interface FigureDao {
     @Query("SELECT * FROM FigureDB")
     suspend fun getAllFigures(): List<FigureDB>
 
+    @Query("DELETE FROM FigureDB")
+    suspend fun deleteAll()
+
     // ... other queries as needed
 }
