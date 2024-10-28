@@ -1,4 +1,4 @@
-package com.hninor.editorgrafico.ui.theme
+package com.hninor.editorgrafico.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

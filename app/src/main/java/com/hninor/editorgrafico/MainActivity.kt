@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.hninor.editorgrafico.presentation.DesignScreen
 import com.hninor.editorgrafico.presentation.EditorGraficoViewModel
 import com.hninor.editorgrafico.presentation.figures
-import com.hninor.editorgrafico.ui.theme.EditorGraficoTheme
+import com.hninor.editorgrafico.presentation.theme.EditorGraficoTheme
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {

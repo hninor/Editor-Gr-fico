@@ -28,11 +28,11 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.hninor.editorgrafico.core.util.convexHull
 import com.hninor.editorgrafico.data.entities.Figure
 import com.hninor.editorgrafico.data.entities.Point
-import com.hninor.editorgrafico.ui.theme.EditorGraficoTheme
+import com.hninor.editorgrafico.presentation.theme.EditorGraficoTheme
 import kotlin.math.abs
-import kotlin.math.atan2
 
 @Composable
 fun DesignScreen(figures: List<Figure>) {
@@ -191,23 +191,6 @@ val figures = listOf(
 )
 
 
-fun convexHull(points: List<Point>): List<Point> {
-    if (points.size < 3) {
-        return points
-    }
 
-    // Find the point with the lowest y-coordinate (or lexicographically smallest if ties)
-    val p0 = points.minByOrNull { it.y }!!
-
-    // Sort the points by polar angle with respect to p0
-    val sortedPoints = points.sortedBy {
-        atan2(
-            (it.y - p0.y).toDouble(),
-            (it.x - p0.x).toDouble()
-        )
-    }
-
-    return sortedPoints
-}
 
 
