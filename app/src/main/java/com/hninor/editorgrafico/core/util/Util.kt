@@ -4,6 +4,7 @@ import com.hninor.editorgrafico.data.entities.Point
 import kotlin.math.atan2
 
 
+
 fun convexHull(points: List<Point>): List<Point> {
     if (points.size < 3) {
         return points
