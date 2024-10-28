@@ -40,6 +40,8 @@ import kotlin.math.abs
 @Composable
 fun DesignScreen(figures: List<Figure>) {
 
+    val usecase = GenerarPoligonoRegularUseCase()
+
     var figureSelected by remember { mutableStateOf(Figure()) }
 
 
@@ -154,12 +156,20 @@ fun DesignScreen(figures: List<Figure>) {
             }
 
             item {
-                FigureItem(figure = GenerarPoligonoRegularUseCase().ejecutar(10)) {
+                FigureItem(figure = usecase.generarDummy()) {
                     figureSelected = it
                 }
+
+
             }
         }
 
+    }
+
+    if (figureSelected.name == "Poligono regular") {
+        PolygonInputDialog(onNumberOfSidesChanged = {
+            figureSelected = usecase.generarPoligono(it)
+        })
     }
 
 }

@@ -1,6 +1,5 @@
 package com.hninor.editorgrafico.domain.usecases
 
-import android.R.attr.radius
 import com.hninor.editorgrafico.domain.entities.Figure
 import com.hninor.editorgrafico.domain.entities.Point
 import java.lang.Math.cos
@@ -9,8 +8,12 @@ import java.lang.Math.sin
 
 class GenerarPoligonoRegularUseCase {
 
-    fun ejecutar(numeroLados: Int): Figure {
-        val response = Figure("Poligono regular", generarPuntos(numeroLados))
+    fun generarDummy(): Figure {
+        return Figure("Poligono regular")
+    }
+
+    fun generarPoligono(numeroLados: Int): Figure {
+        val response = Figure("Poligono regular $numeroLados", generarPuntos(numeroLados))
         return response
     }
 
