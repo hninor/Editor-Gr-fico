@@ -1,4 +1,4 @@
-package com.hninor.editorgrafico.data.entities
+package com.hninor.editorgrafico.domain.entities
 
 data class Figure(
     val name: String = "",

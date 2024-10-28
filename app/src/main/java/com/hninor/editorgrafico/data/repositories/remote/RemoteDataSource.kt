@@ -1,6 +1,6 @@
 package com.hninor.editorgrafico.data.repositories.remote
 
-import com.hninor.editorgrafico.data.entities.Figure
+import com.hninor.editorgrafico.domain.entities.Figure
 
 class RemoteDataSource(private val figureService: FigureService) {
 

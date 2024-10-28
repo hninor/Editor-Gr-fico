@@ -1,6 +1,6 @@
 package com.hninor.editorgrafico.core.util
 
-import com.hninor.editorgrafico.data.entities.Point
+import com.hninor.editorgrafico.domain.entities.Point
 import kotlin.math.atan2
 
 

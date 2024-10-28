@@ -1,8 +1,8 @@
 package com.hninor.editorgrafico.data.repositories.local
 
 import com.google.gson.Gson
-import com.hninor.editorgrafico.data.entities.Figure
-import com.hninor.editorgrafico.data.entities.Point
+import com.hninor.editorgrafico.domain.entities.Figure
+import com.hninor.editorgrafico.domain.entities.Point
 import com.hninor.editorgrafico.data.repositories.local.db.FigureDB
 import com.hninor.editorgrafico.data.repositories.local.db.FigureDao
 

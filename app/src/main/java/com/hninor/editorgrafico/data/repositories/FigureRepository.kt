@@ -1,6 +1,6 @@
 package com.hninor.editorgrafico.data.repositories
 
-import com.hninor.editorgrafico.data.entities.Figure
+import com.hninor.editorgrafico.domain.entities.Figure
 import com.hninor.editorgrafico.data.repositories.local.LocalDataSource
 import com.hninor.editorgrafico.data.repositories.remote.RemoteDataSource
 

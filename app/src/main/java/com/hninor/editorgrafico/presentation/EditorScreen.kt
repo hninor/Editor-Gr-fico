@@ -31,8 +31,9 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hninor.editorgrafico.core.util.convexHull
-import com.hninor.editorgrafico.data.entities.Figure
-import com.hninor.editorgrafico.data.entities.Point
+import com.hninor.editorgrafico.domain.entities.Figure
+import com.hninor.editorgrafico.domain.entities.Point
+import com.hninor.editorgrafico.domain.usecases.GenerarPoligonoRegularUseCase
 import com.hninor.editorgrafico.presentation.theme.EditorGraficoTheme
 import kotlin.math.abs
 
@@ -148,6 +149,12 @@ fun DesignScreen(figures: List<Figure>) {
         ) {
             items(figures) { figure ->
                 FigureItem(figure) {
+                    figureSelected = it
+                }
+            }
+
+            item {
+                FigureItem(figure = GenerarPoligonoRegularUseCase().ejecutar(10)) {
                     figureSelected = it
                 }
             }

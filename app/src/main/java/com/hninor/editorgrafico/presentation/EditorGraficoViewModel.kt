@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hninor.editorgrafico.data.entities.Figure
+import com.hninor.editorgrafico.domain.entities.Figure
 import com.hninor.editorgrafico.data.repositories.FigureRepository
 import kotlinx.coroutines.launch
 
