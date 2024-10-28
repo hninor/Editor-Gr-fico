@@ -20,6 +20,12 @@ class FigureRepository(
     }
 
     suspend fun getFiguresRemote(): Result<List<Figure>> {
+        val result = remoteDataSource.getFigures()
+        if (result.isSuccess) {
+            localDataSource.saveFiguresLocally(
+                result.getOrDefault(emptyList())
+            )
+        }
         return remoteDataSource.getFigures()
     }
 

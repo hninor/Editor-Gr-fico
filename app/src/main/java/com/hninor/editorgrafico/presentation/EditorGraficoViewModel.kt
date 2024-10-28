@@ -27,10 +27,10 @@ class EditorGraficoViewModel(
                 val figuresDownloaded = result.getOrDefault(emptyList())
                 figures.clear()
                 figures.addAll(figuresDownloaded)
-                figureRepository.saveFiguresLocally(figuresDownloaded)
+
             } else {
                 // Handle error
-                Log.e("MainViewModel", "Error fetching figures: ${result.exceptionOrNull()}")
+                Log.e("ViewModel", "Error fetching figures: ${result.exceptionOrNull()}")
             }
         }
     }
